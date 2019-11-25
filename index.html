@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Want to do List</title>
+    <meta charset="UTF-8" />
+    <link
+      href="https://jsprimer.net/use-case/todoapp/final/final/index.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="todoapp">
+      <!-- 3. id属性をJavaScriptのために指定 -->
+      <form id="js-form">
+        <input
+          id="js-form-input"
+          class="new-todo"
+          type="text"
+          placeholder="What want to do?"
+          autocomplete="off"
+        />
+      </form>
+      <!-- 4. TodoアプリのメインとなるTodoリスト -->
+      <div id="js-todo-list" class="todo-list">
+        <!-- 動的に更新されるTodoリスト -->
+      </div>
+      <footer class="footer">
+        <!-- 5. Todoアイテム数の表示 -->
+        <span id="js-todo-count">WanTodo Count: 0</span>
+      </footer>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

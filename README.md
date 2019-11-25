@@ -1,2 +1,0 @@
-# WanTodoList
-Created with CodeSandbox
