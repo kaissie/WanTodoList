@@ -3,10 +3,7 @@
   <head>
     <title>Want to do List</title>
     <meta charset="UTF-8" />
-    <link
-      href="https://jsprimer.net/use-case/todoapp/final/final/index.css"
-      rel="stylesheet"
-    />
+    <link href="src/styles.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -20,6 +17,14 @@
           placeholder="What want to do?"
           autocomplete="off"
         />
+        <input
+          id="js-form-input-tag"
+          class="new-todo-tag"
+          type="text"
+          placeholder="tags"
+          autocomplete="off"
+        />
+        <button type="submit"></button>
       </form>
       <!-- 4. TodoアプリのメインとなるTodoリスト -->
       <div id="js-todo-list" class="todo-list">

@@ -9,6 +9,14 @@ export class WanTodoItemView {
    * @returns {Element}
    */
   createElement(wantodoItem, { onUpdateWanTodo, onDeleteWanTodo }) {
+    const wantodoTagsElement = document.createElement("ul");
+    wantodoTagsElement.className = "tag";
+    wantodoItem.tags.forEach(tag => {
+      var li = document.createElement("li");
+      li.textContent = "#" + tag;
+      wantodoTagsElement.appendChild(li);
+    });
+    console.log(wantodoTagsElement);
     const wantodoItemElement = wantodoItem.completed
       ? element`<li><input type="checkbox" class="checkbox" checked>
                                     <s>${wantodoItem.title}</s>
@@ -18,6 +26,7 @@ export class WanTodoItemView {
                                     ${wantodoItem.title}
                                     <button class="delete">x</button>
                                 </input></li>`;
+    wantodoItemElement.appendChild(wantodoTagsElement);
     const inputCheckboxElement = wantodoItemElement.querySelector(".checkbox");
     inputCheckboxElement.addEventListener("change", () => {
       // コールバック関数に変更

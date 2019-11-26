@@ -14,9 +14,9 @@ export class App {
    * Todoを追加時に呼ばれるリスナー関数
    * @param {string} title
    */
-  handleAdd(title) {
+  handleAdd(title, tags = []) {
     this.wantodoListModel.addWanTodo(
-      new WanTodoItemModel({ title, completed: false })
+      new WanTodoItemModel({ title, tags, completed: false })
     );
   }
 
@@ -39,6 +39,8 @@ export class App {
   mount() {
     const formElement = document.querySelector("#js-form");
     const inputElement = document.querySelector("#js-form-input");
+    // add tag form
+    const inputTagElement = document.querySelector("#js-form-input-tag");
     const containerElement = document.querySelector("#js-todo-list");
     const wantodoItemCountElement = document.querySelector("#js-todo-count");
     // 2. TodoListModelの状態が更新されたら表示を更新する
@@ -67,8 +69,9 @@ export class App {
     formElement.addEventListener("submit", event => {
       event.preventDefault();
       // 新しいTodoItemをTodoListへ追加する
-      this.handleAdd(inputElement.value);
+      this.handleAdd(inputElement.value, inputTagElement.value.split(","));
       inputElement.value = "";
+      inputTagElement.value = "";
     });
   }
 }
