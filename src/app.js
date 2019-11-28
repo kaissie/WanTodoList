@@ -69,7 +69,7 @@ export class App {
     formElement.addEventListener("submit", event => {
       event.preventDefault();
       // 新しいTodoItemをTodoListへ追加する
-      this.handleAdd(inputElement.value, inputTagElement.value.split(","));
+      this.handleAdd(inputElement.value, inputTagElement.value.split(/,|\s/));
       inputElement.value = "";
       inputTagElement.value = "";
     });

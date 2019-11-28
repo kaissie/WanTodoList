@@ -13,7 +13,9 @@ export class WanTodoItemView {
     wantodoTagsElement.className = "tag";
     wantodoItem.tags.forEach(tag => {
       var li = document.createElement("li");
-      li.textContent = "#" + tag;
+      if (tag.charAt(0) !== "#" && tag.charAt(0) !== "")
+        li.textContent = "#" + tag;
+      else li.textContent = tag;
       wantodoTagsElement.appendChild(li);
     });
     console.log(wantodoTagsElement);
